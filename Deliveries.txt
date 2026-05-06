@@ -1,0 +1,6 @@
+TICKET 5 1
+Doritos 8 20 Chips
+TICKET 6 1
+Doritos 3 20 Chips
+TICKET 7 1
+Cheetos 3 16 Chips
