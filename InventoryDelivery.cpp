@@ -25,8 +25,12 @@ void Inventory::createTicket(DeliveryQueue& queue) {
         // Asks the user for the category
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         string category;
-        cout << "Enter category: ";
+        cout << "Enter category (one word only): ";
         getline(cin, category);
+        // Keeps only the first word for category
+        streamstream ss(category);
+        ss >> category;
+
         // Gives a uncategorized value when left empty
         if (category.empty()) {
             category = "Uncategorized";

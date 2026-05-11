@@ -49,8 +49,11 @@ void Inventory::addProduct(bool sortOrder, HistoryList& history, int& nextId, Ha
         product[count].price = getPositiveDouble();
         // Asks for the category of the product
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << "Enter a category: ";
+        cout << "Enter a category (one word only): ";
         getline(cin, product[count].category);
+        // Kepps only one word for category
+        stringstream ss(product[count].category);
+        ss >> product[count].category;
 
         //Edge case in case the user inputs a empty category.
         if (product[count].category.empty()) {
