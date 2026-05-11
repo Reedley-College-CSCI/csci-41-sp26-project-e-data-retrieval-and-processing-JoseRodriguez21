@@ -304,8 +304,9 @@ void Inventory::categorySelectionOption(bool& sortOrder, HistoryList& history, i
                 break;
             }
             case 2: {
-                if(categoryExist(sortOrder, history, nextId, hashTable)) {
-                    selectedCategory(sortOrder, history, nextId, hashTable);
+                string category;
+                if(categoryExist(hashTable, category)) {
+                    selectedCategory(sortOrder, history, nextId, hashTable, category);
                 }
                 break;
             }
@@ -322,7 +323,7 @@ void Inventory::categorySelectionOption(bool& sortOrder, HistoryList& history, i
 // Selected Category 
 // Manages a specific category access through option 2 of the category selection option
 // Let's the user interact with a specific category and it's products
-void Inventory::selectedCategory(bool& sortOrder, HistoryList& history, int& nextId, HashTable& hashTable) {
+void Inventory::selectedCategory(bool& sortOrder, HistoryList& history, int& nextId, HashTable& hashTable, string& category) {
     int categoryChoice;
 
 }

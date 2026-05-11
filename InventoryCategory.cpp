@@ -28,8 +28,7 @@ void Inventory::searchCategory(HashTable& hashTable) {
         }
     }
 }
-bool Inventory::categoryExist(bool& sortOrder, HistoryList& history, int& nextId, HashTable& hashTable) {
-    string category;
+bool Inventory::categoryExist(HashTable& hashTable, string& category) {
     cout << "Enter category name: ";
     getline(cin, category);
 
@@ -42,4 +41,5 @@ bool Inventory::categoryExist(bool& sortOrder, HistoryList& history, int& nextId
         cout << category << " category couldn't be found." << endl;
         return false;
     }
+    return true;
 }
