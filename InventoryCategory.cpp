@@ -81,6 +81,13 @@ void Inventory::deleteCategory(bool& sortOrder, HistoryList& history, int& nextI
         product[1] = Products();
     }
     count = newCount;
-
+    // Remove category from the hash table
+    hashTable.removeCategory(category);
+    // Save everything into the text files
+    history.saveHistory("History.txt");
+    updateData("Storage.txt");
+    sortByName(sortOrder);
+    // Successful message of delition
+    cout << category << " category deleted successfully." << endl;
     
 }
