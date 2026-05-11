@@ -58,7 +58,6 @@ class Inventory {
     void logSelectionOption(HistoryList& history, int& nextId);
     void deliverySelectionOption(DeliveryQueue& queue, HistoryList& history, int& nextId, HashTable& hashTable);
     void categorySelectionOption(bool& sortOrder, HistoryList& history, int& nextId, HashTable& hashTable);
-    void selectedCategory(bool& sortOrder, HistoryList& history, int& nextId, HashTable& hashTable, string& category);
     bool categoryExist(HashTable& hashTable, string& category);
     void addProduct(bool sortOrder, HistoryList& history, int& nextId, HashTable& hashTable);
     void deleteProduct(const string& targetProduct, bool sortOrder, HistoryList& history, int& nextId, HashTable& hashTable);

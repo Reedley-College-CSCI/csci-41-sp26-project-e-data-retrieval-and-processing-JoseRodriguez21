@@ -46,8 +46,9 @@ void Inventory::categoryMenu() {
     cout << "\n          Browse By Category        " << endl;
     cout << "--------------------------------------" << endl;
     cout << " 1 - Display all categories           " << endl;
-    cout << " 2 - Select a category                " << endl;
+    cout << " 2 - Display products of a category   " << endl;
     cout << " 3 - Search for a category            " << endl;
+    cout << " 4 - Delete entire category           " << endl;
     cout << "-1 - Return back to the main menu     " << endl;
     cout << " Enter a Choice: ";
 }
@@ -304,26 +305,18 @@ void Inventory::categorySelectionOption(bool& sortOrder, HistoryList& history, i
                 break;
             }
             case 2: {
-                string category;
-                if(categoryExist(hashTable, category)) {
-                    selectedCategory(sortOrder, history, nextId, hashTable, category);
-                }
                 break;
             }
             case 3: {
                 searchCategory(hashTable);
                 break;
             }
-
+            case 4: {
+                
+                break;
+            }
             default: cout << "\n Invalid option." << endl; break;
                 
         }
     }
-}
-// Selected Category 
-// Manages a specific category access through option 2 of the category selection option
-// Let's the user interact with a specific category and it's products
-void Inventory::selectedCategory(bool& sortOrder, HistoryList& history, int& nextId, HashTable& hashTable, string& category) {
-    int categoryChoice;
-
 }
