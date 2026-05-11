@@ -51,7 +51,8 @@ void Inventory::categoryMenu() {
     cout << "-1 - Return back to the main menu     " << endl;
     cout << " Enter a Choice: ";
 }
-
+// Selection option at the start of the program
+// Manages all the components from the program
 void Inventory::selectOption(bool& sortOrder, HistoryList& history, int& nextId, DeliveryQueue& queue, HashTable& hashTable) {
     int userChoice;
     while(true) {
@@ -166,7 +167,9 @@ void Inventory::selectOption(bool& sortOrder, HistoryList& history, int& nextId,
         }
     }
 }
-
+// Log Selection Option
+// Manages the linked list from the program which is access through option 6 in the selection option in the start
+// Manages every log done by the user, such as adding and removing
 void Inventory::logSelectionOption(HistoryList& history, int& nextId) {
     int historyChoice;
     while (true) {
@@ -225,9 +228,12 @@ void Inventory::logSelectionOption(HistoryList& history, int& nextId) {
         }
     }   
 } 
-
+// Delivery Selection Option 
+// Manages the queue from the program accessed in option 7 in the selection option at the start
+// Let/s the user interact with orders making sure that all the items arrived
 void Inventory::deliverySelectionOption(DeliveryQueue& queue, HistoryList& history, int& nextId, HashTable& hashTable) {
     int deliveryChoice;
+    
     while(true) {
         deliveryMenu();
         while (!(cin >> deliveryChoice)) {
@@ -271,7 +277,9 @@ void Inventory::deliverySelectionOption(DeliveryQueue& queue, HistoryList& histo
         }
     }
 }
-
+// Category Selection Option
+// Manages the Hash Table from the program and it's accessed in option 8 in the selection option at the start
+// Let's the user interact with category and all the products that belong that that specific
 void Inventory::categorySelectionOption(bool& sortOrder, HistoryList& history, int& nextId, HashTable& hashTable) {
     int categoryChoice;
 
@@ -295,6 +303,7 @@ void Inventory::categorySelectionOption(bool& sortOrder, HistoryList& history, i
                 hashTable.display();
                 break;
             case 2:
+                selectedCategory(sortOrder, history, nextId, hashTable);
                 cout << "Not finished " << endl;
                 break;
             case 3:
@@ -304,4 +313,11 @@ void Inventory::categorySelectionOption(bool& sortOrder, HistoryList& history, i
                 
         }
     }
+}
+// Selected Category 
+// Manages a specific category access through option 2 of the category selection option
+// Let's the user interact with a specific category and it's products
+void Inventory::selectedCategory(bool& sortOrder, HistoryList& history, int& nextId, HashTable& hashTable) {
+    int categoryChoice;
+
 }
