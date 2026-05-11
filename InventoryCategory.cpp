@@ -53,5 +53,27 @@ void Inventory::deleteCategory(bool& sortOrder, HistoryList& history, int& nextI
         cout << "Invalid. Enter 1 or 0: ";
         userChoice = getValidInt();
     }
-
+    // If 0 is inputted they the action gets cancelled
+    if (userChoice == 0) {
+        cout << "Deletion cancelled." << endl;
+        return;
+    } 
+    // Goes through all the items in the array
+    int newCount = 0;
+    for (int i = 0; i < count; i++) {
+        // If the category is not the same the product is kept on the array
+        if (product[i].category != category) {
+            product[newCount] = product[i];
+            newCount++;
+        }
+        // If the category is the same then it get's removed
+        else {    
+            Transaction log;
+            log.id = nextId++;
+            log.action = "Removed";
+            log.name = product[i].productName;
+            log.quantity = product[i].itemStock;
+            history.Prepend(log);
+        }
+    }
 }
