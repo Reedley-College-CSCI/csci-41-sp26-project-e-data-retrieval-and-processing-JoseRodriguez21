@@ -28,3 +28,18 @@ void Inventory::searchCategory(HashTable& hashTable) {
         }
     }
 }
+bool Inventory::categoryExist(bool& sortOrder, HistoryList& history, int& nextId, HashTable& hashTable) {
+    string category;
+    cout << "Enter category name: ";
+    getline(cin, category);
+
+    while (category.empty()) {
+        cout << "\nCategory name can't be empty. Enter category: ";
+        getline(cin, category);
+    }
+
+    if (!hashTable.categoryExists(category)) {
+        cout << category << " category couldn't be found." << endl;
+        return false;
+    }
+}

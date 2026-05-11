@@ -299,16 +299,21 @@ void Inventory::categorySelectionOption(bool& sortOrder, HistoryList& history, i
         }
 
         switch(categoryChoice) {
-            case 1:
+            case 1: {
                 hashTable.display();
                 break;
-            case 2:
-                selectedCategory(sortOrder, history, nextId, hashTable);
-                cout << "Not finished " << endl;
+            }
+            case 2: {
+                if(categoryExist(sortOrder, history, nextId, hashTable)) {
+                    selectedCategory(sortOrder, history, nextId, hashTable);
+                }
                 break;
-            case 3:
+            }
+            case 3: {
                 searchCategory(hashTable);
                 break;
+            }
+
             default: cout << "\n Invalid option." << endl; break;
                 
         }
