@@ -43,3 +43,15 @@ bool Inventory::categoryExist(HashTable& hashTable, string& category) {
     }
     return true;
 }
+
+void Inventory::deleteCategory(bool& sortOrder, HistoryList& history, int& nextId, HashTable& hashTable, string& category) {
+    // comfirms if the user is sure of deleting the category
+    cout << "Are you sure you want to delete the entire" << category << "category? (1 = yes, 0 = no): ";
+    int userChoice = getValidInt();
+    // Makes sure the user either input 1 or 0
+    while (userChoice != 1 && userChoice != 0) {
+        cout << "Invalid. Enter 1 or 0: ";
+        userChoice = getValidInt();
+    }
+
+}
