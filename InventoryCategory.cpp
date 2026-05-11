@@ -76,4 +76,11 @@ void Inventory::deleteCategory(bool& sortOrder, HistoryList& history, int& nextI
             history.Prepend(log);
         }
     }
+    // Clears the rest of the slots 
+    for (int i = newCount; i < count; i++) {
+        product[1] = Products();
+    }
+    count = newCount;
+
+    
 }
