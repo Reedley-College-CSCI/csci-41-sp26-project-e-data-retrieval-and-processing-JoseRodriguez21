@@ -312,7 +312,10 @@ void Inventory::categorySelectionOption(bool& sortOrder, HistoryList& history, i
                 break;
             }
             case 4: {
-                
+                string category;
+                if (categoryExist(hashTable, category)) {
+                    deleteCategory(sortOrder, history, nextId, hashTable, category);
+                }
                 break;
             }
             default: cout << "\n Invalid option." << endl; break;

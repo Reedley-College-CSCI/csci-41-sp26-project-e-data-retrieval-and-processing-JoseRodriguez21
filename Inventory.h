@@ -32,6 +32,8 @@ class Inventory {
         void createTicket(DeliveryQueue& queue);
         void processTicket(DeliveryQueue& queue, HistoryList& history, int& nextId, HashTable& hashTable);
         void searchQueue(DeliveryQueue& queue);
+        bool categoryExist(HashTable& hashTable, string& category);
+        void deleteCategory(bool& sortOrder, HistoryList& history, int& nextId, HashTable& hashTable, string& category);
         void resize();
         void printHeader();
         int getValidInt() const;
@@ -58,7 +60,6 @@ class Inventory {
     void logSelectionOption(HistoryList& history, int& nextId);
     void deliverySelectionOption(DeliveryQueue& queue, HistoryList& history, int& nextId, HashTable& hashTable);
     void categorySelectionOption(bool& sortOrder, HistoryList& history, int& nextId, HashTable& hashTable);
-    bool categoryExist(HashTable& hashTable, string& category);
     void addProduct(bool sortOrder, HistoryList& history, int& nextId, HashTable& hashTable);
     void deleteProduct(const string& targetProduct, bool sortOrder, HistoryList& history, int& nextId, HashTable& hashTable);
     int searchProduct(const string& targetProduct, long long& opCount, bool sortOrder);
