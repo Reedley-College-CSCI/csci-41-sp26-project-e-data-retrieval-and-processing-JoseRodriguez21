@@ -147,6 +147,7 @@ void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId
 
     // Returns if the user inputs 0
     if (choice == 0) {
+        cout << "You have return back to the main menu." << endl;
         return;
     }
     // Makes sure the user enters a item inside the range
@@ -172,6 +173,7 @@ void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId
         cout << " 3 - Change Category " << endl;
         cout << " 4 - Change Name     " << endl;
         cout << "-1 - Back            " << endl;
+        cout << string(40, '-') << endl;
         cout << "Enter choice:        " << endl;  
 
         while (!(cin >> modifyChoice)) {
@@ -180,6 +182,7 @@ void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId
         }
 
         if (modifyChoice == 0) {
+            cout << "You have return back to the main menu." << endl;
             return;
         }
 
