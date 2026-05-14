@@ -241,6 +241,15 @@ void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId
                 hashTable.insert(newCategory, product[index].productName);
                 // Shows the category changed and the new one
                 cout << product[index].productName << " moved from " << oldCategory << " to " << newCategory << endl;
+                // Saves the log into the history records
+                Transaction log;
+                log.id       = nextId++;
+                log.action   = "Modifed Category";
+                log.name     = product[index].productName;
+                log.quantity = product[index].itemStock;
+                history.Prepend(log);
+                history.saveHistory("History.txt");
+                updateData("Storage.txt");
 
                 break;
                 }
