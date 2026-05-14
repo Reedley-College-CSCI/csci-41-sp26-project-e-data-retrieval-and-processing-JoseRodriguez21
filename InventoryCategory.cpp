@@ -3,7 +3,7 @@
 void Inventory::searchCategory(HashTable& hashTable, string& category) {
     HashNode* node = hashTable.search(category);
 
-    cout << "/n [" << node->category << "]" << endl;
+    cout << "\n " << node->category << endl;
     cout << string(50, '-') << endl;
 
     ProductNode* producto = node->products;

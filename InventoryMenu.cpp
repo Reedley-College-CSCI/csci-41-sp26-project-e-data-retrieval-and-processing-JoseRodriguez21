@@ -304,6 +304,7 @@ void Inventory::categorySelectionOption(bool& sortOrder, HistoryList& history, i
                 break;
             }
             case 2: {
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
                 string category;
                 if (categoryExist(hashTable, category)) {
                     searchCategory(hashTable, category);
