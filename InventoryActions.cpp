@@ -128,5 +128,21 @@ void Inventory::deleteProduct(const string& targetProduct, bool sortOrder, Histo
 }
 
 void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId, HashTable& hashTable) {
+    // Checks that their are items inside the storage system
+    if (count == 0) {
+        cout << "Inventory empty." << endl;
+        return;
+    }
 
+    // Displays all products numbered for the user to choose
+    cout << "\nProduct List: " << endl;
+    cout << string(40, '-') << endl;
+    for (int i = 0; i < count; i++) {
+        cout << " " << i + 1 << ". " << product[i].productName << endl;
+    }
+    cout << string(40, '-') << endl;
+
+    cout << "Enter product number to Modify (0 to cancel): ";
+    int choice = getValidInt();
+    
 }
