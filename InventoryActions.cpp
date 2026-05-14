@@ -172,6 +172,7 @@ void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId
         cout << " 3 - Change Category " << endl;
         cout << " 4 - Change Name     " << endl;
         cout << "-1 - Back            " << endl;
+        cout << "Enter choice:        " << endl;  
 
         while (!(cin >> modifyChoice)) {
             cin.clear();
