@@ -219,8 +219,23 @@ void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId
 
                 break;
                 }
-            case 3:
+            case 3: {
+                // Asks the user for a category
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                string newCategory;
+                cout << "Enter new category (one word only): ";
+                getline(cin, newCategory);
+                // only takes the first word
+                stringstream ss(newCategory);
+                ss >> newCategory;
+                // If the category is left empty give a value
+                if (newCategory.empty()) {
+                    newCategory = "Uncategorized";
+                }
+
+
                 break;
+                }
             case 4:
                 break;
             default: 
