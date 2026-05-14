@@ -157,7 +157,7 @@ void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId
     // Index where the product is located
     int index = choice - 1;
     
-    int ModifyChoice;
+    int modifyChoice;
     while (true) {
         cout << "\nModifying: " << product[index].productName << endl;
         cout << string(40, '-') << endl;
@@ -173,7 +173,28 @@ void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId
         cout << " 4 - Change Name     " << endl;
         cout << "-1 - Back            " << endl;
 
-        
+        while (!(cin >> modifyChoice)) {
+            cin.clear();
+            cout << "Invalid input. Enter a number: ";
+        }
 
+        if (modifyChoice == 0) {
+            return;
+        }
+
+        switch (modifyChoice) {
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            default: 
+                cout << "invalid Option. " << endl; 
+                break;
+        }
+     
     }
 }
