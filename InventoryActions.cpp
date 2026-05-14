@@ -232,7 +232,15 @@ void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId
                 if (newCategory.empty()) {
                     newCategory = "Uncategorized";
                 }
-
+                // Remove old category from hash table
+                hashTable.removeProduct(product[index].category, product[index].productName);
+                // Updates the category in the array to the new one
+                string oldCategory = product[index].category;
+                product[index].category = newCategory;
+                // Inserts the product with the category into the hash table
+                hashTable.insert(newCategory, product[index].productName);
+                // Shows the category changed and the new one
+                cout << product[index].productName << " moved from " << oldCategory << " to " << newCategory << endl;
 
                 break;
                 }
