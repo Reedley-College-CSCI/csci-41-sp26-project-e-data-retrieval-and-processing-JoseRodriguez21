@@ -270,7 +270,18 @@ void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId
                 // Shows the user the new product name
                 product[index].productName = newName;
                 cout << "Product name updated to " << newName << endl;
-                
+                // Saves the log into the history records
+                Transaction log;
+                log.id       = nextId++;
+                log.action   = "Modifed Name";
+                log.name     = newName;
+                log.quantity = product[index].itemStock;
+                history.Prepend(log);
+                history.saveHistory("History.txt");
+                updateData("Storage.txt");
+                // Updated index after sort 
+                long long ops;
+                index = searchProduct(newName, ops, sortOrder);
                 break;
                 } 
             default: 
