@@ -91,7 +91,3 @@ void Inventory::deleteCategory(bool& sortOrder, HistoryList& history, int& nextI
     cout << category << " category deleted successfully." << endl;
     
 }
-
-void Inventory::specificCategory(HashTable& hashTable) {
-    string category;
-}
