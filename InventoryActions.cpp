@@ -141,8 +141,39 @@ void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId
         cout << " " << i + 1 << ". " << product[i].productName << endl;
     }
     cout << string(40, '-') << endl;
-
+    // Ask the user for a product number to modify
     cout << "Enter product number to Modify (0 to cancel): ";
     int choice = getValidInt();
+
+    // Returns if the user inputs 0
+    if (choice == 0) {
+        return;
+    }
+    // Makes sure the user enters a item inside the range
+    while (choice < 1 || choice > count) {
+        cout << "Invalid. Enter a number between 1 and " << count << ": ";
+        choice = getValidInt();
+    }
+    // Index where the product is located
+    int index = choice - 1;
     
+    int ModifyChoice;
+    while (true) {
+        cout << "\nModifying: " << product[index].productName << endl;
+        cout << string(40, '-') << endl;
+        cout << "  Stock:     " << product[index].itemStock << endl;
+        cout << "  Price:     $" << fixed << setprecision(2) << product[index].price << endl;
+        cout << "  Category:  " << product[index].category << endl;
+
+        cout << string(40, '-') << endl;
+
+        cout << " 1 - Change Price    " << endl;
+        cout << " 2 - Change Stock    " << endl;
+        cout << " 3 - Change Category " << endl;
+        cout << " 4 - Change Name     " << endl;
+        cout << "-1 - Back            " << endl;
+
+        
+
+    }
 }
