@@ -184,7 +184,7 @@ void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId
 
         switch (modifyChoice) {
             case 1: {
-                // Asks for the user nre price and makes sure it's positive
+                // Asks for the user for a new price and makes sure it's positive
                 cout << "Enter new price: $";
                 double newPrice = getPositiveDouble();
                 product[index].price = newPrice;
@@ -192,7 +192,7 @@ void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId
                 // Saves the log into the history records
                 Transaction log;
                 log.id       = nextId++;
-                log.action   = "Modifed";
+                log.action   = "Modifed Price";
                 log.name     = product[index].productName;
                 log.quantity = product[index].itemStock;
                 history.Prepend(log);
@@ -201,8 +201,24 @@ void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId
 
                 break;
                 }
-            case 2:
+            case 2: {
+                // Asks for the user for new stock and makes sure it's positive
+                cout << "Enter new Stock: ";
+                double newStock = getPositiveInt();
+                product[index].itemStock = newStock;
+                cout << "Stock updated to " << fixed << setprecision(2) << newStock << endl;
+                // Saves the log into the history records
+                Transaction log;
+                log.id       = nextId++;
+                log.action   = "Modifed Stock";
+                log.name     = product[index].productName;
+                log.quantity = product[index].itemStock;
+                history.Prepend(log);
+                history.saveHistory("History.txt");
+                updateData("Storage.txt");
+
                 break;
+                }
             case 3:
                 break;
             case 4:
