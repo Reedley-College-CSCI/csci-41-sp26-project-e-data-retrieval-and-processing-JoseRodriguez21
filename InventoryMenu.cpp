@@ -9,9 +9,10 @@ void Inventory::displayMenu() {
     cout << "3 - Display all Products  " << endl;
     cout << "4 - Search for a Product  " << endl;
     cout << "5 - Sorting A - Z or Z - A" << endl;
-    cout << "6 - Log history           " << endl;
-    cout << "7 - Pending Deliveries    " << endl;
-    cout << "8 - Browse by category    " << endl;
+    cout << "6 - Modify Product        " << endl;
+    cout << "7 - Log history           " << endl;
+    cout << "8 - Pending Deliveries    " << endl;
+    cout << "9 - Browse by category    " << endl;
     cout << "-99 - Exit the program    " << endl;
     cout << "--------------------------" << endl;
     cout << "Enter a choice: ";
@@ -148,17 +149,20 @@ void Inventory::selectOption(bool& sortOrder, HistoryList& history, int& nextId,
                         }
                     break;
                     }
-            
             case 6: {
+                    modifyProduct(sortOrder, history, nextId, hashTable);
+                    break;
+                    }
+            case 7: {
                     logSelectionOption(history, nextId);
                     break;
                     }
 
-            case 7: {
+            case 8: {
                     deliverySelectionOption(queue, history, nextId, hashTable);
                     break;
                     }
-            case 8: {
+            case 9: {
                     categorySelectionOption(sortOrder, history, nextId, hashTable);
                     break;
                     }

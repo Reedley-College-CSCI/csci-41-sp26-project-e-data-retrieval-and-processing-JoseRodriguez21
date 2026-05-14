@@ -126,3 +126,7 @@ void Inventory::deleteProduct(const string& targetProduct, bool sortOrder, Histo
     cout << targetProduct << " has been deleted." << endl;
     updateData("Storage.txt");
 }
+
+void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId, HashTable& hashTable) {
+
+}
