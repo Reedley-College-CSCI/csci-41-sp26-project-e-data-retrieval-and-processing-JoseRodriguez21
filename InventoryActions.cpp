@@ -253,8 +253,26 @@ void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId
 
                 break;
                 }
-            case 4:
+            case 4: {
+                // Asks the user for a new name
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                string newName;
+                cout << "Enter new product name: ";
+                getline(cin, newName);
+                // Checks if the name is empty
+                while (newName.empty()) {
+                    cout << "Name can't be empty. Enter product name: ";
+                    getline(cin, newName);
+                }
+                // Updates the hash Table 
+                hashTable.removeProduct(product[index].category, product[index].productName);
+                hashTable.insert(product[index].category, newName);
+                // Shows the user the new product name
+                product[index].productName = newName;
+                cout << "Product name updated to " << newName << endl;
+                
                 break;
+                } 
             default: 
                 cout << "invalid Option. " << endl; 
                 break;
