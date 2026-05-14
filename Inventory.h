@@ -63,7 +63,7 @@ class Inventory {
     void addProduct(bool sortOrder, HistoryList& history, int& nextId, HashTable& hashTable);
     void deleteProduct(const string& targetProduct, bool sortOrder, HistoryList& history, int& nextId, HashTable& hashTable);
     int searchProduct(const string& targetProduct, long long& opCount, bool sortOrder);
-    void searchCategory(HashTable& hashTable);
+    void searchCategory(HashTable& hashTable, string& category);
 };
 
 #endif

@@ -304,7 +304,10 @@ void Inventory::categorySelectionOption(bool& sortOrder, HistoryList& history, i
                 break;
             }
             case 2: {
-                searchCategory(hashTable);
+                string category;
+                if (categoryExist(hashTable, category)) {
+                    searchCategory(hashTable, category);
+                }
                 break;
             }
             case 3: {

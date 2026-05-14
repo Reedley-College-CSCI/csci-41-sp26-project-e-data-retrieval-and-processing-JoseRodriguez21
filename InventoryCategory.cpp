@@ -1,8 +1,7 @@
 #include "Inventory.h"
 
-void Inventory::searchCategory(HashTable& hashTable) {
+void Inventory::searchCategory(HashTable& hashTable, string& category) {
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    string category;
     cout << "\nEnter category name to search: ";
     getline(cin, category);
 
