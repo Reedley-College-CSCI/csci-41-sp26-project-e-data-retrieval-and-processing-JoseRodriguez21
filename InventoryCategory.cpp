@@ -78,7 +78,7 @@ void Inventory::deleteCategory(bool& sortOrder, HistoryList& history, int& nextI
     }
     // Clears the rest of the slots 
     for (int i = newCount; i < count; i++) {
-        product[1] = Products();
+        product[i] = Products();
     }
     count = newCount;
     // Remove category from the hash table
