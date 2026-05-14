@@ -1,16 +1,29 @@
 #include "Inventory.h"
 
 void Inventory::searchCategory(HashTable& hashTable, string& category) {
-     HashNode* node = hashTable.search(category);
+    HashNode* node = hashTable.search(category);
 
-     cout << "/n [" << node->category << "]" << endl;
-     cout << string(50, '-') << endl;
+    cout << "/n [" << node->category << "]" << endl;
+    cout << string(50, '-') << endl;
 
-     ProductNode* product = node->products;
-     int count = 1;
+    ProductNode* producto = node->products;
+    int count = 1;
 
-     
+    while(producto) {
+        long long ops;
+        int index = searchProduct(producto->productName, ops, true);
+        if (index != -1) {
+            cout << "  " << count++ << ". " << left 
+            << setw(20) << product[index]. productName 
+            << setw(10) << product[index].itemStock 
+            << "$" << left << setw(12) << fixed << setprecision(2) << product[index].price
+            << product[index].category << endl;
+        }
+        producto = producto->next;
+    }
+    cout << string(50, '-') << endl;
 }
+
 bool Inventory::categoryExist(HashTable& hashTable, string& category) {
     cout << "Enter category name: ";
     getline(cin, category);
