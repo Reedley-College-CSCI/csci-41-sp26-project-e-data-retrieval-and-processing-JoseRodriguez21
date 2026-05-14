@@ -305,6 +305,7 @@ void Inventory::categorySelectionOption(bool& sortOrder, HistoryList& history, i
                 break;
             }
             case 2: {
+                specificCategory(hashTable);
                 break;
             }
             case 3: {

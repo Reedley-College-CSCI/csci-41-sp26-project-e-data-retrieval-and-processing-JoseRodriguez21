@@ -34,6 +34,7 @@ class Inventory {
         void searchQueue(DeliveryQueue& queue);
         bool categoryExist(HashTable& hashTable, string& category);
         void deleteCategory(bool& sortOrder, HistoryList& history, int& nextId, HashTable& hashTable, string& category);
+        void specificCategory(HashTable& HashTable);
         void resize();
         void printHeader();
         int getValidInt() const;
