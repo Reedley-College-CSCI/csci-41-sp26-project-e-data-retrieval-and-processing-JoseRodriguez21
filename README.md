@@ -765,13 +765,13 @@ Some issues of my program are that categories are single names and can’t have 
 
 You must include a short narrated video demonstrating that your **final project** works correctly and is integrated into your program. See prompt in Canvas for complete instructions. 
 
-**REQUIRED Link to video:** 
+**REQUIRED Link to video:** https://youtu.be/ESJfDtybqH8
 
 ---
 
 ## Acknowledgments
 
 - Lectures and zybooks from this class  
-- Program inspired from my mom store which storage system has a lot of flaws
+- Program inspired from my mom store which the program she uses for her store has a lot of flaws
 
 
