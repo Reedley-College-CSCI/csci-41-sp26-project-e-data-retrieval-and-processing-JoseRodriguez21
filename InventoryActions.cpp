@@ -181,7 +181,7 @@ void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId
             cout << "Invalid input. Enter a number: ";
         }
 
-        if (modifyChoice == 0) {
+        if (modifyChoice == -1) {
             cout << "You have return back to the main menu." << endl;
             return;
         }
@@ -196,7 +196,7 @@ void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId
                 // Saves the log into the history records
                 Transaction log;
                 log.id       = nextId++;
-                log.action   = "Modifed Price";
+                log.action   = "Modifed";
                 log.name     = product[index].productName;
                 log.quantity = product[index].itemStock;
                 history.Prepend(log);
@@ -214,7 +214,7 @@ void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId
                 // Saves the log into the history records
                 Transaction log;
                 log.id       = nextId++;
-                log.action   = "Modifed Stock";
+                log.action   = "Modifed";
                 log.name     = product[index].productName;
                 log.quantity = product[index].itemStock;
                 history.Prepend(log);
@@ -248,7 +248,7 @@ void Inventory::modifyProduct(bool& sortOrder, HistoryList& history, int& nextId
                 // Saves the log into the history records
                 Transaction log;
                 log.id       = nextId++;
-                log.action   = "Modifed Category";
+                log.action   = "Modifed";
                 log.name     = product[index].productName;
                 log.quantity = product[index].itemStock;
                 history.Prepend(log);
