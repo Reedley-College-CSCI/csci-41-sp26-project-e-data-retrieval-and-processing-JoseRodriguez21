@@ -1,5 +1,4 @@
-Cheetos 66 16 Chips
-Ciel 1.5L 10 16 Water
+Cheetos 10 19 Chips
 Ciel 1L 24 20 Water
 Ciel 500ml 20 14 Water
 Coke 2.5L 16 42 Coca-Cola
@@ -7,9 +6,10 @@ Coke 600ml 30 22 Coca-Cola
 Doritos 30 20 Chips
 Fanta 600ml 8 22 Coca-Cola
 Fresca 600ml 12 22 Coca-Cola
-Gansito 22 21 Pastries
+Gansito 24 21 Pastries
 Milk 1.8L 6 38 General
 Milk 3.9L 3 54 General
+Pan Bimbo 10 15 Pan
 Paper 450 2 stationery
 Pencils 25 2.5 stationery
 Pens 32 4 stationery
@@ -17,4 +17,4 @@ Ruffles 14 20 Chips
 Salt 1Kg 6 18 General
 Sprite 600ml 15 22 Coca-Cola
 Sugar 1Kg 8 23 General
-Takis 12 21 Chips
+Takis 10 12 Chips
